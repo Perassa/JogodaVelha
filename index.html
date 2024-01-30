@@ -52,7 +52,7 @@
     </div>
 </body>
 <Script>
-    var matrizjogo = [
+    var matrizJogo = [
         ["","","",],
         ["","","",],
         ["","","",]
@@ -60,22 +60,28 @@
 
     var numeroJogador = 1;
 
-    console.log(matrizjogo);
+    console.log(matrizJogo);
 
     function trocarValor(span, linha, coluna)
     {
-        if (numeroJogador == 1)
+        if(matrizJogo[linha][coluna]=="")
         {
-            matrizjogo[linha][coluna] = "0";
-        span.innerHTML = "0",
-        numeroJogador = 2;
-        }else {
-            matrizjogo[linha][coluna] = "x";
-        span.innerHTML = "x",
-        numeroJogador = 1;
+            if (numeroJogador == 1)
+            {
+                matrizJogo[linha][coluna] = "0";
+                span.innerHTML = "0",
+                numeroJogador = 2;
+            } else {
+                matrizJogo[linha][coluna] = "x";
+                span.innerHTML = "x",
+                numeroJogador = 1;
+            }
+        } else {
+            alert('Campo já marcado!')
         }
        
-        console.log(matrizjogo);
+        console.log(matrizJogo);
+        
     }
 </Script>
 </html>
