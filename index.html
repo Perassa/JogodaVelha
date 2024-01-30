@@ -18,35 +18,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 celula">
-                <Span onclick="alert('clicou')">+</Span>
+                <Span onclick="trocarValor(this,0,0)">+</Span>
             </div>
             <div class="col-4 celula">
-                <Span>+</Span>
+                <Span onclick="trocarValor(this,0,1)">+</Span>
             </div>
             <div class="col-4 celula">
-                <Span>+</Span>
-            </div>
-        </div>    
-        <div class="row">
-            <div class="col-4 celula">
-                <Span>+</Span>
-            </div>
-            <div class="col-4 celula">
-                <Span>+</Span>
-            </div>
-            <div class="col-4 celula">
-                <Span>+</Span>
+                <Span onclick="trocarValor(this,0,2)">+</Span>
             </div>
         </div>    
         <div class="row">
             <div class="col-4 celula">
-                <Span>+</Span>
+                <Span onclick="trocarValor(this,1,0)">+</Span>
             </div>
             <div class="col-4 celula">
-                <Span>+</Span>
+                <Span onclick="trocarValor(this,1,1)">+</Span>
             </div>
             <div class="col-4 celula">
-                <Span>+</Span>
+                <Span onclick="trocarValor(this,1,2)">+</Span>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-4 celula">
+                <Span onclick="trocarValor(this,2,0)">+</Span>
+            </div>
+            <div class="col-4 celula">
+                <Span onclick="trocarValor(this,2,1)">+</Span>
+            </div>
+            <div class="col-4 celula">
+                <Span onclick="trocarValor(this,2,2)">+</Span>
             </div>
         </div>    
     </div>
@@ -58,8 +58,24 @@
         ["","","",]
     ];
 
+    var numeroJogador = 1;
+
     console.log(matrizjogo);
 
-    
+    function trocarValor(span, linha, coluna)
+    {
+        if (numeroJogador == 1)
+        {
+            matrizjogo[linha][coluna] = "0";
+        span.innerHTML = "0",
+        numeroJogador = 2;
+        }else {
+            matrizjogo[linha][coluna] = "x";
+        span.innerHTML = "x",
+        numeroJogador = 1;
+        }
+       
+        console.log(matrizjogo);
+    }
 </Script>
 </html>
