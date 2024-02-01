@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="10" />
+    <meta http-equiv="refresh" content="" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra, Papel e Tesoura - Que Comecem o Jogo</title>
@@ -49,13 +49,13 @@
             <p>Jogador 1</p>
             <div id="buttons1">
                 <button onclick="jogar('pedra', 1)">
-                    <img src="./img/Pedra.png" alt="Pedra" width="50">
+                    <img id="img1Pedra" src="./img/Pedra.png" alt="Pedra" width="50">
                 </button>
                 <button onclick="jogar('papel', 1)">
-                    <img src="./img/Papel.png" alt="Papel" width="50">
+                    <img id="img1Papel" src="./img/Papel.png" alt="Papel" width="50">
                 </button>
                 <button onclick="jogar('tesoura', 1)">
-                    <img src="./img/Tesoura.png" alt="Tesoura" width="50">
+                    <img id="img1Tesoura" src="./img/Tesoura.png" alt="Tesoura" width="50">
                 </button>
             </div>
         </div>
@@ -63,13 +63,13 @@
             <p>Jogador 2</p>
             <div id="buttons2">
                 <button onclick="jogar('pedra', 2)">
-                    <img src="./img/Pedra.png" alt="Pedra" width="50">
+                    <img id="img2Pedra" src="./img/Pedra.png" alt="Pedra" width="50">
                 </button>
                 <button onclick="jogar('papel', 2)">
-                    <img src="./img/Papel.png" alt="Papel" width="50">
+                    <img id="img2Papel" src="./img/Papel.png" alt="Papel" width="50">
                 </button>
                 <button onclick="jogar('tesoura', 2)">
-                    <img src="./img/Tesoura.png" alt="Tesoura" width="50">
+                    <img id="img2Tesoura" src="./img/Tesoura.png" alt="Tesoura" width="50">
                 </button>
             </div>
         </div>
@@ -87,6 +87,17 @@
             const opcoes = ['pedra', 'papel', 'tesoura'];
             escolhas[jogador] = escolha;
 
+            if (jogador==1){
+                document.getElementById('img1Pedra').style.display = 'none';
+                document.getElementById('img1Papel').style.display = 'none';
+                document.getElementById('img1Tesoura').style.display = 'none';
+            }
+
+            if (jogador==2){
+                document.getElementById('img2Pedra').style.display = 'none';
+                document.getElementById('img2Papel').style.display = 'none';
+                document.getElementById('img2Tesoura').style.display = 'none';}
+                
             if (escolhas[1] && escolhas[2]) {
                 const resultado = verificarVencedor(escolhas[1], escolhas[2]);
                 document.getElementById('result').innerHTML = `Jogador 1 escolheu ${escolhas[1]}. Jogador 2 escolheu ${escolhas[2]}. Resultado: ${resultado}`;
